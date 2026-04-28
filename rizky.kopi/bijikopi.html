@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kedai Biji Kopi - Premium Coffee Roasters</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#e3beb8",
+                        "on-tertiary-container": "#839991",
+                        "tertiary": "#081c17",
+                        "outline-variant": "#d3c3c0",
+                        "on-secondary-container": "#79574c",
+                        "on-primary-fixed": "#2b1613",
+                        "on-secondary-fixed-variant": "#5e3f35",
+                        "tertiary-fixed": "#d0e8de",
+                        "on-error": "#ffffff",
+                        "background": "#fff8f6",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#504442",
+                        "surface-bright": "#fff8f6",
+                        "on-tertiary-fixed": "#0b1f1a",
+                        "on-tertiary-fixed-variant": "#364b44",
+                        "surface-variant": "#e8e1df",
+                        "tertiary-fixed-dim": "#b5ccc3",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#33302f",
+                        "on-background": "#1e1b1a",
+                        "primary": "#271310",
+                        "on-primary-fixed-variant": "#5b403c",
+                        "secondary-fixed-dim": "#e9bdae",
+                        "on-secondary-fixed": "#2d150d",
+                        "surface-tint": "#745853",
+                        "on-surface": "#1e1b1a",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#ffdbcf",
+                        "on-primary-container": "#ae8d87",
+                        "surface-container-low": "#faf2f0",
+                        "error": "#ba1a1a",
+                        "primary-container": "#3e2723",
+                        "outline": "#827472",
+                        "surface-container-highest": "#e8e1df",
+                        "surface-container-high": "#eee6e5",
+                        "surface": "#fff8f6",
+                        "tertiary-container": "#1d312b",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#e3beb8",
+                        "secondary": "#79564b",
+                        "primary-fixed": "#ffdad4",
+                        "surface-dim": "#e0d8d7",
+                        "secondary-container": "#fed0c1",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#f4eceb",
+                        "inverse-on-surface": "#f7efee",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "xxl": "48px",
+                        "xs": "4px",
+                        "section": "80px",
+                        "lg": "24px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "gutter": "24px",
+                        "margin": "auto",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "h2": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .brew-gauge-bg {
+            background: linear-gradient(to right, #D7A86E, #3E2723);
+        }
+        .custom-scroll-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .custom-scroll-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+<!-- 1. Sticky Navbar -->
+<header class="sticky top-0 w-full z-50 bg-white/90 dark:bg-stone-900/90 backdrop-blur-md border-b border-stone-200 dark:border-stone-800 shadow-sm">
+<nav class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#3E2723]" data-icon="coffee">coffee</span>
+<span class="text-xl font-bold text-[#3E2723] dark:text-[#D7A86E] font-['Plus_Jakarta_Sans'] tracking-tight">Kedai Biji Kopi</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex gap-6 mr-6">
+<a class="text-[#3E2723] border-b-2 border-[#3E2723] pb-1 font-semibold cursor-pointer" href="#" tabindex="0">Biji Kopi</a>
+<a class="text-stone-600 hover:text-[#3E2723] transition-colors cursor-pointer" href="#" tabindex="0">Alat Seduh</a>
+<a class="text-stone-600 hover:text-[#3E2723] transition-colors cursor-pointer" href="#" tabindex="0">Cerita Kami</a>
+</div>
+<div class="flex items-center gap-3">
+<button class="material-symbols-outlined p-2 hover:bg-stone-100 rounded-full transition-all cursor-pointer" data-icon="search" tabindex="0">search</button>
+<button class="material-symbols-outlined p-2 hover:bg-stone-100 rounded-full transition-all cursor-pointer" data-icon="shopping_cart" tabindex="0">shopping_cart</button>
+<button class="material-symbols-outlined p-2 hover:bg-stone-100 rounded-full transition-all cursor-pointer" data-icon="person" tabindex="0">person</button>
+<button class="hidden md:block bg-[#3E2723] text-white px-5 py-2 rounded-lg font-semibold active:scale-95 duration-200 cursor-pointer" tabindex="0">Beli Sekarang</button>
+</div>
+</div>
+</nav>
+</header>
+<main>
+<!-- 2. Hero Section -->
+<section class="relative min-h-[707px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Premium coffee beans" class="w-full h-full object-cover" data-alt="Close up of fresh roasted coffee beans with warm lighting and soft shadows, rich brown textures and depth of field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVpyc-WBlZ44Kd9CeFtpAEvdvDBiPSZXFKzwEaa-AFwm5Yb36zPEgouXWSzQYOB_fYFko77roJnCH_ajZ6e5TfbgwEf6DFpeJ0Vc3bsBy7Md3GYF1ZwLNR57rSVimxZZhwA8ZlMIxpYSydP_Oo56Gk-sk3NwJvGR503Bd3QTZctYiYn8VeVEwB3Foq4JknLX4v041S6WEdSQDNDUHRMBXCH6RvpQVWA7W1V4vPc85_3moBkx2WmOm0xqiYkjWxqiEx6NitMBSAiHvc"/>
+<div class="absolute inset-0 bg-black/60"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-6 py-section flex flex-col items-center text-center">
+<div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20 mb-8">
+<span class="material-symbols-outlined text-yellow-400" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-white font-label-caps text-label-caps">4.9 Rating oleh Pecinta Kopi</span>
+</div>
+<h1 class="font-h1 text-h1 text-white mb-6 max-w-3xl leading-tight">Biji Kopi Berkualitas, Langsung dari Petani Indonesia</h1>
+<p class="text-stone-300 text-body-lg font-body-lg max-w-2xl mb-10">Rasakan kesegaran artisan roast yang diproses dengan dedikasi tinggi untuk menjaga karakter rasa unik setiap origin.</p>
+<div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+<button class="bg-[#D7A86E] text-[#3E2723] px-10 py-4 rounded-xl font-bold hover:bg-[#c4965d] transition-all shadow-lg active:scale-95 cursor-pointer" tabindex="0">Beli Sekarang</button>
+<button class="bg-transparent border-2 border-white text-white px-10 py-4 rounded-xl font-bold hover:bg-white/10 transition-all active:scale-95 cursor-pointer" tabindex="0">Lihat Produk</button>
+</div>
+</div>
+</section>
+<!-- 3. Trust Indicators -->
+<section class="bg-surface py-12 border-b border-stone-200">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-3 gap-8">
+<div class="text-center">
+<p class="text-3xl font-bold text-[#3E2723]">1000+</p>
+<p class="text-stone-500 text-sm">Pelanggan Puas</p>
+</div>
+<div class="text-center">
+<p class="text-3xl font-bold text-[#3E2723]">50+</p>
+<p class="text-stone-500 text-sm">Varian Biji Kopi</p>
+</div>
+<div class="text-center col-span-2 md:col-span-1">
+<p class="text-3xl font-bold text-[#3E2723]">20+</p>
+<p class="text-stone-500 text-sm">Wilayah Penghasil</p>
+</div>
+</div>
+</section>
+<!-- 5. Filter & Categories (Placed above products for UX) -->
+<section class="py-10 bg-surface">
+<div class="max-w-7xl mx-auto px-6 overflow-x-auto custom-scroll-hide">
+<div class="flex gap-4 min-w-max pb-2">
+<button class="bg-[#3E2723] text-white px-6 py-2 rounded-full font-medium shadow-md cursor-pointer" tabindex="0">Semua</button>
+<button class="bg-stone-100 text-stone-600 px-6 py-2 rounded-full font-medium hover:bg-stone-200 transition-colors cursor-pointer" tabindex="0">Arabica</button>
+<button class="bg-stone-100 text-stone-600 px-6 py-2 rounded-full font-medium hover:bg-stone-200 transition-colors cursor-pointer" tabindex="0">Robusta</button>
+<button class="bg-stone-100 text-stone-600 px-6 py-2 rounded-full font-medium hover:bg-stone-200 transition-colors cursor-pointer" tabindex="0">Blend</button>
+<button class="bg-stone-100 text-stone-600 px-6 py-2 rounded-full font-medium hover:bg-stone-200 transition-colors cursor-pointer" tabindex="0">Specialty</button>
+</div>
+</div>
+</section>
+<!-- 4. Featured Products -->
+<section class="py-section max-w-7xl mx-auto px-6">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-h2 text-h2 text-primary mb-2">Produk Unggulan Kami</h2>
+<p class="text-stone-500">Pilihan terbaik untuk ritual kopi pagi Anda</p>
+</div>
+<button class="text-[#3E2723] font-semibold flex items-center gap-1 hover:underline underline-offset-4 active:scale-95 transition-transform cursor-pointer" tabindex="0">Lihat Semua <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Product Card 1 -->
+<div class="bg-white rounded-xl shadow-sm border border-stone-100 overflow-hidden group hover:shadow-xl transition-all duration-300">
+<div class="relative aspect-square overflow-hidden">
+<img alt="Aceh Gayo Coffee" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Packaged bag of specialty coffee beans labeled Aceh Gayo on a rustic wooden table with scattered beans" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqq4iOHfELBbFgnuC0PVY0bw8PT5V8Sh1QonnW-37NbuxuwHViIZJPh4jQyg9ysQWhRFbUiPq-KiaX46hEGMvV9BvxGsYpfz3GjwpbZl2kjX3QRczGbtxdUo1SVMobZhAhhC7wUtqtlH1hM54-1BkDNiefuGJfuf3eHqOeJyPu5GlSs3mA1NV2Sz3-zZdhbb5PpHW8mR06tYsQKBnIi-GB6Z5XsEQH7A7wLYp9yufLCNLuMPu2jWh3yMZtuLQsT3ILlJuruylZBhRy"/>
+<div class="absolute top-4 left-4 bg-[#D7A86E] text-[#3E2723] px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">Rp 85.000 / 250g</div><p class="text-[10px] text-stone-400 mt-1">Tersedia: 500g, 1kg</p>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-h3 text-h3 text-primary">Aceh Gayo</h3>
+<span class="text-[#3E2723] font-bold">Rp 85.000 / 250g</span><p class="text-[10px] text-stone-400 mt-1">Tersedia: 500g, 1kg</p>
+</div>
+<p class="text-stone-500 text-sm mb-4 line-clamp-2">Aroma earthy dengan notes rempah dan dark chocolate. Body tebal dan low acidity.</p>
+<div class="mb-4">
+<div class="flex justify-between text-[10px] font-bold text-stone-400 uppercase mb-1">
+<span>Light</span>
+<span>Medium</span>
+<span>Dark</span>
+</div>
+<div class="h-1.5 w-full bg-stone-100 rounded-full overflow-hidden">
+<div class="h-full w-2/3 bg-primary"></div>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-stone-100 text-stone-600 px-3 py-1 rounded text-xs">Fruity</span>
+<span class="bg-stone-100 text-stone-600 px-3 py-1 rounded text-xs">Herbal</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-[#3E2723] text-white py-2.5 rounded-lg text-sm font-semibold hover:bg-primary-container transition-all active:scale-95 cursor-pointer" tabindex="0">Tambah ke Keranjang</button>
+<button class="px-3 border border-stone-200 rounded-lg text-stone-600 hover:bg-stone-50 transition-all active:scale-95 cursor-pointer" tabindex="0"><span class="material-symbols-outlined text-xl" data-icon="visibility">visibility</span></button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-white rounded-xl shadow-sm border border-stone-100 overflow-hidden group hover:shadow-xl transition-all duration-300">
+<div class="relative aspect-square overflow-hidden">
+<img alt="Toraja Kalosi Coffee" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Authentic Toraja Kalosi coffee beans in a hessian sack with soft morning light, elegant and traditional vibe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYCe9pq7mSkPkKT43Qw5xFznhNtgdXmaJMjzOxX6-66M_YA-uXRCm-C88qaiu5F1oZ7bl77Dl-tBwBdjh-0WDGbJ9etrxAgM0lQlXNOtV5Bae3KjOMZHq_5g0gYhJBpy5SPPoS6D8GQMB3IZTgVrd4Ri_T2SsjLCFauf3-KRUmUKlvWXc62QdepP9hyv_7UB2TJXaxnRl8pIgOcnGiLe3aHWgUK9om8Cqm3eUiXNYXhZEGuRdZtSRzcfITT_-KUeu6AwdM55bqhYBV"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-h3 text-h3 text-primary">Toraja Kalosi</h3>
+<span class="text-[#3E2723] font-bold">Rp 92.000 / 250g</span><p class="text-[10px] text-stone-400 mt-1">Tersedia: 500g, 1kg</p>
+</div>
+<p class="text-stone-500 text-sm mb-4 line-clamp-2">Notes kacang-kacangan dan aroma bunga melati yang manis. Acid medium yang menyegarkan.</p>
+<div class="mb-4">
+<div class="flex justify-between text-[10px] font-bold text-stone-400 uppercase mb-1">
+<span>Light</span>
+<span>Medium</span>
+<span>Dark</span>
+</div>
+<div class="h-1.5 w-full bg-stone-100 rounded-full overflow-hidden">
+<div class="h-full w-1/2 bg-primary"></div>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-stone-100 text-stone-600 px-3 py-1 rounded text-xs">Nutty</span>
+<span class="bg-stone-100 text-stone-600 px-3 py-1 rounded text-xs">Floral</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-[#3E2723] text-white py-2.5 rounded-lg text-sm font-semibold hover:bg-primary-container transition-all active:scale-95 cursor-pointer" tabindex="0">Tambah ke Keranjang</button>
+<button class="px-3 border border-stone-200 rounded-lg text-stone-600 hover:bg-stone-50 transition-all active:scale-95 cursor-pointer" tabindex="0"><span class="material-symbols-outlined text-xl" data-icon="visibility">visibility</span></button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-white rounded-xl shadow-sm border border-stone-100 overflow-hidden group hover:shadow-xl transition-all duration-300">
+<div class="relative aspect-square overflow-hidden">
+<img alt="Bali Kintamani Coffee" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Coffee farm setting in Bali with fresh Bali Kintamani beans, bright and vibrant atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDINfKsjK_byPHvwf7oXO0RWMBmO05TUrsvco3NcWIqQGnhqULzbIWDZyMF9QLcalV9aFnN1EXm3Iw_Xw4K4h1jzfDl_jMACAYPtuItjfHUanExXZJeW1wOwwnLjJ2PIDVTR-CoQ0FmIP6NTuCjYhVjCSIe1PLLjOllee_Ox0T-N-ENRhKjmTxrPsIALlw2PEo5kYDtSsqP-MJKdiDSvmvtug06ClXVGdWFp26V9_0W7WtS5tlIS4xxtKsp3kzMvw3UQDCnhqoOLdMq"/>
+<div class="absolute top-4 left-4 bg-[#D7A86E] text-[#3E2723] px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">Rp 88.000 / 250g</div><p class="text-[10px] text-stone-400 mt-1">Tersedia: 500g, 1kg</p>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-h3 text-h3 text-primary">Bali Kintamani</h3>
+<span class="text-[#3E2723] font-bold">Rp 88.000 / 250g</span><p class="text-[10px] text-stone-400 mt-1">Tersedia: 500g, 1kg</p>
+</div>
+<p class="text-stone-500 text-sm mb-4 line-clamp-2">Karakter citrus yang kuat dengan body ringan. Sangat cocok diseduh V60.</p>
+<div class="mb-4">
+<div class="flex justify-between text-[10px] font-bold text-stone-400 uppercase mb-1">
+<span>Light</span>
+<span>Medium</span>
+<span>Dark</span>
+</div>
+<div class="h-1.5 w-full bg-stone-100 rounded-full overflow-hidden">
+<div class="h-full w-1/3 bg-primary"></div>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-stone-100 text-stone-600 px-3 py-1 rounded text-xs">Citrus</span>
+<span class="bg-stone-100 text-stone-600 px-3 py-1 rounded text-xs">Bright</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-[#3E2723] text-white py-2.5 rounded-lg text-sm font-semibold hover:bg-primary-container transition-all active:scale-95 cursor-pointer" tabindex="0">Tambah ke Keranjang</button>
+<button class="px-3 border border-stone-200 rounded-lg text-stone-600 hover:bg-stone-50 transition-all active:scale-95 cursor-pointer" tabindex="0"><span class="material-symbols-outlined text-xl" data-icon="visibility">visibility</span></button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. About Us -->
+<section class="py-section bg-stone-50">
+<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+<div class="relative">
+<div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl relative z-10">
+<img alt="Coffee farmer in Indonesia" class="w-full h-full object-cover" data-alt="Indonesian coffee farmer smiling while holding a basket of ripe red coffee cherries in a lush plantation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEotvk4_8up72V3p5eMqPiimShF2sBvQjJ7aE6-Vv48JBiEr88U99kw7eGZc1zfuXbwoxOqSf7HMmv4EOsW4hqgPsswqJcOJLODRnc5PrEaRXkQyv0j7l-exkKORm_aP1iakbWmsP4udrukMUPYyaTL2C5cDDpBqoqUlLmpn_bPVJcP5qui6KxqoAhjbS4BWFH0PguUq58DjRhDBN9TN_gkmZ23Cwh9J571g9m8cXDhZXgrRYYOUbJGNMGEUsc-j08X9K0LPEgY801"/>
+</div>
+<div class="absolute -bottom-8 -right-8 w-48 h-48 bg-[#D7A86E] rounded-3xl -z-10 hidden lg:block"></div>
+</div>
+<div>
+<h2 class="font-h2 text-h2 text-primary mb-6">Cerita di Balik Setiap Cangkir</h2>
+<p class="text-stone-600 text-body-lg mb-6 leading-relaxed">Kami percaya bahwa kopi yang nikmat berawal dari hubungan baik dengan para petani. Kedai Biji Kopi bekerja sama secara langsung dengan komunitas petani lokal untuk memastikan kesejahteraan mereka serta kualitas biji yang optimal.</p>
+<p class="text-stone-600 text-body-lg mb-8 leading-relaxed">Setiap biji disangrai dalam batch kecil oleh master roaster kami, menjaga setiap detail profil rasa agar sampai ke tangan Anda dalam keadaan paling segar.</p>
+<button class="bg-[#3E2723] text-white px-8 py-4 rounded-xl font-bold hover:shadow-lg transition-all active:scale-95 cursor-pointer" tabindex="0">Pelajari Lebih Lanjut</button>
+</div>
+</div>
+</section>
+<!-- 7. Why Choose Us -->
+<section class="py-section bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<h2 class="font-h2 text-h2 text-primary text-center mb-16">Kenapa Harus Kami?</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="p-8 text-center bg-stone-50 rounded-2xl border border-stone-100 hover:-translate-y-2 transition-transform duration-300">
+<span class="material-symbols-outlined text-4xl text-[#D7A86E] mb-6" data-icon="local_fire_department">local_fire_department</span>
+<h4 class="font-h3 text-xl text-primary mb-3">Fresh Roast</h4>
+<p class="text-stone-500 text-sm">Disangrai setiap minggu untuk menjamin aroma maksimal.</p>
+</div>
+<div class="p-8 text-center bg-stone-50 rounded-2xl border border-stone-100 hover:-translate-y-2 transition-transform duration-300">
+<span class="material-symbols-outlined text-4xl text-[#D7A86E] mb-6" data-icon="handshake">handshake</span>
+<h4 class="font-h3 text-xl text-primary mb-3">Direct Trade</h4>
+<p class="text-stone-500 text-sm">Transparansi penuh dari kebun hingga ke cangkir Anda.</p>
+</div>
+<div class="p-8 text-center bg-stone-50 rounded-2xl border border-stone-100 hover:-translate-y-2 transition-transform duration-300">
+<span class="material-symbols-outlined text-4xl text-[#D7A86E] mb-6" data-icon="local_shipping">local_shipping</span>
+<h4 class="font-h3 text-xl text-primary mb-3">Fast Delivery</h4>
+<p class="text-stone-500 text-sm">Pengiriman aman dan cepat ke seluruh Indonesia.</p>
+</div>
+<div class="p-8 text-center bg-stone-50 rounded-2xl border border-stone-100 hover:-translate-y-2 transition-transform duration-300">
+<span class="material-symbols-outlined text-4xl text-[#D7A86E] mb-6" data-icon="verified">verified</span>
+<h4 class="font-h3 text-xl text-primary mb-3">Premium Quality</h4>
+<p class="text-stone-500 text-sm">Hanya biji kopi grade tertinggi yang kami sajikan.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. Video Section -->
+<section class="py-section">
+<div class="max-w-7xl mx-auto px-6">
+<div class="relative rounded-[2rem] overflow-hidden group">
+<img alt="Brewing coffee video cover" class="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Atmospheric video still of a barista pouring hot water over coffee grounds in a V60, dramatic steam and golden lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgyFnMbNScP3QA4kX52m3zO06KX0HLYnB8D20FWAhE4QSKz6n6SSkIXL0r1AckzJ6ejzXiTCeqhVbF9COQ0YGIrTBN_I-7kqASDMifJSSFoNgAOvN3E9N8QhrUBi6TmsY4d-rwBd7lB5yYxl6c4Qp8bzIkNpuYZsQZ7X2Pni1GcsqPg3xbDGuHFslX4sODD5awMJlvezZ_hnwFbV6n3UXjvIFLCaI4JzbKQzLV3i2mf5z8d80ApXcdXR5SyBn9rcRjHw49iTaI5vSJ"/>
+<div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center">
+<h2 class="text-white font-h2 text-h2 mb-8 text-center">Seni Menyeduh di Rumah</h2>
+<button class="flex items-center gap-4 bg-white/20 backdrop-blur-md hover:bg-white/40 text-white px-8 py-4 rounded-full border border-white/30 transition-all cursor-pointer" tabindex="0">
+<span class="material-symbols-outlined text-4xl" data-icon="play_circle" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+<span class="font-bold text-lg">Tonton Sekarang</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 9. Testimonials -->
+<section class="py-section bg-stone-50">
+<div class="max-w-7xl mx-auto px-6">
+<h2 class="font-h2 text-h2 text-primary text-center mb-16">Apa Kata Mereka?</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-100">
+<div class="flex gap-1 text-yellow-500 mb-4">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-stone-600 mb-6 italic">"Aceh Gayo-nya juara! Sangrai-nya pas banget, aromanya benar-benar kuat saat baru dibuka."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-stone-200"></div>
+<div>
+<h5 class="font-bold text-primary">Andi Wijaya</h5>
+<div class="flex items-center gap-1 text-[10px] text-green-600 font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-xs" data-icon="verified">verified</span>
+                                    Verified Buyer
+                                </div>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-100">
+<div class="flex gap-1 text-yellow-500 mb-4">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-stone-600 mb-6 italic">"Penyuka manual brew wajib coba Bali Kintamani dari sini. Karakter citrus-nya dapet banget."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-stone-200"></div>
+<div>
+<h5 class="font-bold text-primary">Siska Pratiwi</h5>
+<div class="flex items-center gap-1 text-[10px] text-green-600 font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-xs" data-icon="verified">verified</span>
+                                    Verified Buyer
+                                </div>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-100">
+<div class="flex gap-1 text-yellow-500 mb-4">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-stone-600 mb-6 italic">"Layanan ramah dan pengiriman sangat cepat. Packings-nya premium, aman sampai rumah."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-stone-200"></div>
+<div>
+<h5 class="font-bold text-primary">Budi Santoso</h5>
+<div class="flex items-center gap-1 text-[10px] text-green-600 font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-xs" data-icon="verified">verified</span>
+                                    Verified Buyer
+                                </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 10. Blog -->
+<section class="py-section">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex justify-between items-end mb-12">
+<h2 class="font-h2 text-h2 text-primary">Edukasi Kopi</h2>
+<button class="text-[#3E2723] font-semibold flex items-center gap-1 cursor-pointer" tabindex="0">Baca Blog <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span></button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<article class="group cursor-pointer active:scale-[0.98] transition-transform">
+<div class="aspect-video rounded-2xl overflow-hidden mb-6 shadow-md">
+<img alt="Brewing methods" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up of various manual brewing equipment like Chemex, Aeropress, and Hario V60 on a clean marble surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-yvq65essJWUOFxEmZwaDJuD2NTKyWJOuMPEuAqF4VdMvkVuGyyUv-DLUDklLWJ3DjLdUj76WYHPHUy3OpBIpylD3grX1pbjaxfOr-ns33mPrRaKTaguzr1gJh7TN5i7RGWZrP_nv_x46zJy-U9NwSJKWHIt5xEAd93JVyn2Dis5UGr0OX3WrW7MdlNLrxkXHreZErQ84nV3AuJGV6jqgJTm1Nc5Xp37ZKhBWVOLbHBreMFUbsVvedSwMJvhpG_K0Kf_nxQeU8he3"/>
+</div>
+<h4 class="font-h3 text-xl mb-3 text-primary group-hover:text-[#D7A86E] transition-colors">5 Cara Menyeduh Kopi Manual Brew yang Benar</h4>
+<p class="text-stone-500 mb-4 line-clamp-2">Pelajari teknik tuang yang tepat untuk menghasilkan ekstraksi kopi yang seimbang dan nikmat.</p>
+<span class="text-xs font-bold text-stone-400 uppercase tracking-widest">15 Jan 2024 • 5 Menit Baca</span>
+</article>
+<article class="group cursor-pointer active:scale-[0.98] transition-transform">
+<div class="aspect-video rounded-2xl overflow-hidden mb-6 shadow-md">
+<img alt="Arabica vs Robusta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Two different types of coffee beans side by side on a neutral background to show the difference between Arabica and Robusta" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN-HoUvV62GZnzLqL9wIjqHKexzDTB99LcPimUPK-RhJEjV6szDKX3S00m0fDIzwrQBVIb9GMxrohF9L7-66WZKOt0CC1t8I8Q-va7ilcDwJna46TmhxDn_LYMpGXfHWu2Tss--89Q-QLHffojbRa4Ko8k0So7wtfRt36GFUMj9c2prI5oNxkA_OpGwnWkSf4CSdvakNnP5Jh27eL_v7y4k_zwWv5BGtwUgT03y6z3NkDMpWesjblUIgaLJTbKsFhnKWDvfVm2t7uK"/>
+</div>
+<h4 class="font-h3 text-xl mb-3 text-primary group-hover:text-[#D7A86E] transition-colors">Arabica vs Robusta: Mana yang Lebih Cocok untuk Anda?</h4>
+<p class="text-stone-500 mb-4 line-clamp-2">Perbedaan mendasar dari rasa, kadar kafein, hingga kondisi lingkungan tempat tumbuhnya.</p>
+<span class="text-xs font-bold text-stone-400 uppercase tracking-widest">10 Jan 2024 • 8 Menit Baca</span>
+</article>
+</div>
+</div>
+</section>
+<!-- 11. Big CTA -->
+<section class="px-6 py-12">
+<div class="max-w-7xl mx-auto relative rounded-[2.5rem] overflow-hidden bg-[#3E2723] text-white py-20 px-8">
+<div class="absolute inset-0 opacity-20">
+<img alt="Coffee background texture" class="w-full h-full object-cover" data-alt="Abstract artistic texture of roasted coffee beans with golden highlights and rich shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx1QO93kfAiqktnwY1epiYC0Hp1hoJSYd8EPGfmsAKjwYVjgyxVRwunJHZSPsn-zWXRmuBZayoenu5KIF0UH4CdyBdkx1zRYFLaolo20vRc2nh_gOblpzgvI_Qn1Y_nJZLRs0ZHgArkBQe6DicOPSNn50F2txkQ2vQAGkg4wCxGSo037XdDbxPCdOXaNQxu6oZnebvTMdXPTiff1796828zDadOgDcxIynZ8VVHJ7RD2D8-7FpfHq8Dey6FnvfSTngBXv0UmfacwoR"/>
+</div>
+<div class="relative z-10 text-center flex flex-col items-center">
+<h2 class="font-h2 text-4xl md:text-5xl mb-8 max-w-2xl leading-tight">Nikmati Kopi Terbaik dari Rumah Anda</h2>
+<p class="text-stone-300 text-body-lg mb-12 max-w-lg">Bawa pulang kualitas café specialty ke dapur Anda hari ini juga.</p>
+<button class="bg-[#D7A86E] text-[#3E2723] px-12 py-5 rounded-xl font-extrabold text-lg hover:scale-105 transition-transform shadow-2xl active:scale-95 cursor-pointer" tabindex="0">Belanja Sekarang</button>
+</div>
+</div>
+</section>
+<!-- 12. Newsletter -->
+<section class="py-section bg-white border-b border-stone-100">
+<div class="max-w-4xl mx-auto px-6 text-center">
+<h3 class="font-h2 text-3xl mb-4 text-primary">Dapatkan Promo &amp; Update</h3>
+<p class="text-stone-500 mb-10">Jadilah yang pertama tahu tentang rilis beans eksklusif dan penawaran spesial kami.</p>
+<form class="flex flex-col sm:flex-row gap-4">
+<input class="flex-1 px-6 py-4 rounded-xl bg-stone-50 border border-stone-200 focus:outline-none focus:ring-2 focus:ring-[#D7A86E] transition-all" placeholder="Alamat Email Anda" type="email"/>
+<button class="bg-[#3E2723] text-white px-8 py-4 rounded-xl font-bold hover:bg-primary-container transition-all cursor-pointer" tabindex="0">Langganan</button>
+</form>
+</div>
+</section>
+</main>
+<!-- 13. Footer -->
+<section class="py-section bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1">
+<h2 class="font-h2 text-h2 text-primary mb-6">Lokasi Kami</h2>
+<p class="text-stone-600 text-body-lg mb-8 leading-relaxed">
+Kunjungi roastery dan cafe kami untuk merasakan langsung aroma biji kopi yang baru saja disangrai. Kami menyambut Anda dengan hangat di jantung kota Bandung.
+</p>
+<div class="flex items-start gap-4 mb-8">
+<span class="material-symbols-outlined text-[#D7A86E] text-2xl mt-1" data-icon="location_on">location_on</span>
+<div>
+<h5 class="font-bold text-primary mb-1">Alamat Fisik</h5>
+<p class="text-stone-500">Jl. Kopi Harum No. 12, Bandung, Indonesia</p>
+</div>
+</div>
+<div class="flex items-start gap-4 mb-10">
+<span class="material-symbols-outlined text-[#D7A86E] text-2xl mt-1" data-icon="schedule">schedule</span>
+<div>
+<h5 class="font-bold text-primary mb-1">Jam Operasional</h5>
+<p class="text-stone-500">Senin - Minggu: 08.00 - 22.00 WIB</p>
+</div>
+</div>
+<a class="inline-flex items-center gap-2 bg-[#3E2723] text-white px-8 py-4 rounded-xl font-bold hover:shadow-lg transition-all active:scale-95 cursor-pointer" href="https://maps.google.com" tabindex="0" target="_blank">
+<span>Buka di Google Maps</span>
+<span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
+</a>
+</div>
+<div class="order-1 md:order-2">
+<div class="relative aspect-square md:aspect-video rounded-3xl overflow-hidden shadow-xl border border-stone-100 bg-stone-50">
+<img alt="Location Map Placeholder" class="w-full h-full object-cover opacity-80" data-alt="Stylized aerial map view of a city neighborhood with a coffee bean pin icon marking a location" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVpyc-WBlZ44Kd9CeFtpAEvdvDBiPSZXFKzwEaa-AFwm5Yb36zPEgouXWSzQYOB_fYFko77roJnCH_ajZ6e5TfbgwEf6DFpeJ0Vc3bsBy7Md3GYF1ZwLNR57rSVimxZZhwA8ZlMIxpYSydP_Oo56Gk-sk3NwJvGR503Bd3QTZctYiYn8VeVEwB3Foq4JknLX4v041S6WEdSQDNDUHRMBXCH6RvpQVWA7W1V4vPc85_3moBkx2WmOm0xqiYkjWxqiEx6NitMBSAiHvc"/>
+<div class="absolute inset-0 flex items-center justify-center bg-black/10">
+<div class="bg-white/90 backdrop-blur-sm p-4 rounded-2xl shadow-2xl flex items-center gap-3 border border-white/50">
+<div class="w-10 h-10 bg-[#3E2723] rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="coffee">coffee</span>
+</div>
+<div class="pr-4">
+<p class="font-bold text-sm text-primary">Kedai Biji Kopi</p>
+<p class="text-[10px] text-stone-500 uppercase font-bold tracking-wider">Bandung Roastery</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><footer class="bg-stone-100 dark:bg-stone-950 font-['Plus_Jakarta_Sans'] text-sm leading-relaxed border-t border-stone-200 dark:border-stone-800 pt-20 pb-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 max-w-7xl mx-auto mb-16">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-[#3E2723]" data-icon="coffee">coffee</span>
+<span class="text-lg font-bold text-[#3E2723] dark:text-[#D7A86E]">Kedai Biji Kopi</span>
+</div>
+<p class="text-stone-500 mb-8 max-w-xs">Dedikasi kami untuk membawa biji kopi terbaik nusantara langsung ke pintu rumah Anda dengan kesegaran maksimal.</p>
+<div class="flex gap-4">
+<a class="p-2 bg-white rounded-full text-[#3E2723] hover:scale-110 transition-transform cursor-pointer" href="#" tabindex="0"><span class="material-symbols-outlined" data-icon="public">public</span></a>
+<a class="p-2 bg-white rounded-full text-[#3E2723] hover:scale-110 transition-transform cursor-pointer" href="#" tabindex="0"><span class="material-symbols-outlined" data-icon="chat">chat</span></a>
+<a class="p-2 bg-white rounded-full text-[#3E2723] hover:scale-110 transition-transform cursor-pointer" href="#" tabindex="0"><span class="material-symbols-outlined" data-icon="photo_camera">photo_camera</span></a>
+</div>
+</div>
+<div>
+<h5 class="font-bold text-[#3E2723] mb-6">Menu</h5>
+<ul class="space-y-4">
+<li><a class="text-stone-500 hover:text-[#3E2723] transition-colors cursor-pointer" href="#" tabindex="0">Semua Produk</a></li>
+<li><a class="text-stone-500 hover:text-[#3E2723] transition-colors cursor-pointer" href="#" tabindex="0">Alat Seduh</a></li>
+<li><a class="text-stone-500 hover:text-[#3E2723] transition-colors cursor-pointer" href="#" tabindex="0">Tentang Kami</a></li>
+<li><a class="text-stone-500 hover:text-[#3E2723] transition-colors cursor-pointer" href="#" tabindex="0">Blog Edukasi</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-[#3E2723] mb-6">Bantuan</h5>
+<ul class="space-y-4">
+<li><a class="text-stone-500 hover:text-[#3E2723] transition-colors cursor-pointer" href="#" tabindex="0">Pengiriman</a></li>
+<li><a class="text-stone-500 hover:text-[#3E2723] transition-colors cursor-pointer" href="#" tabindex="0">Kebijakan Privasi</a></li>
+<li><a class="text-stone-500 hover:text-[#3E2723] transition-colors cursor-pointer" href="#" tabindex="0">Syarat &amp; Ketentuan</a></li>
+<li><a class="text-stone-500 hover:text-[#3E2723] transition-colors cursor-pointer" href="#" tabindex="0">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-[#3E2723] mb-6">Kontak</h5>
+<ul class="space-y-4 text-stone-500">
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-[#D7A86E] text-lg" data-icon="mail">mail</span>
+                        hello@kedaibijikopi.com
+                    </li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-[#D7A86E] text-lg" data-icon="call">call</span>
+                        0857-0750-6396
+                    </li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-[#D7A86E] text-lg" data-icon="location_on">location_on</span>
+                        Jl. Kopi Harum No. 12, Bandung, Indonesia
+                    </li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 border-t border-stone-200 pt-8 flex flex-col md:row justify-between items-center gap-4">
+<p class="text-stone-400 text-xs">© 2024 Kedai Biji Kopi. Dibuat dengan sepenuh hati.</p>
+<div class="flex gap-6">
+<img alt="Visa" class="h-6 opacity-50 grayscale hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfgDZCQKcNqtAoIt9OHgbcIftf2uIDTyp1G7_fXhvJU6uU-HPD94GkJWRHDbyUvfl46OiNZ9Oku-Q9vj7RcpN2ajYF-FK-vDyJD05ZweTh7g4jQSbLVdVclD5AucuxvkU9jVL8zgQ6Q1nAEEusFe95rgBT0d8Cz1c-4O1aqNwCwmZrjH5GVB_wLRmsoQTrq2sV3dfD4EYqfbNAcHj3zn9PCeWu_cBB2A4tBrrHqcslHaYTMHxJWdUR9FnV7cB5QlnGxmcwtQIXUYru"/>
+<img alt="Mastercard" class="h-6 opacity-50 grayscale hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI7iEJDVgpMIYq_B7ERKTlGuv01Kd4yScIdOmCQfWeT0HqX5YVGFdJstgdbXFcRvLwKcefSr6ME2txd7u3aXqfrWwMh0SLtVd2HvKnKLC21-V530xO_a4e7kqoAhDOkuEyb08c0s1CRMOyN-WvdwfB12AR9OcJ2WTN6EdM_2DCuVOPUg_wlUEPWYBkP8a8z47SFg-0IXZ3JSOH18RnwxWnjrWko38uzIzVEsBApnxIZIUw-YRXaess0fScqtMsmvHkXkc0aVNuG42V"/>
+<img alt="Bank Transfer" class="h-6 opacity-50 grayscale hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5h0KcTIMgWmncflgewcDsaYIFwI4sHWJ_afev1CC1jqvZpEeCVllogKTihB40nVdES7Hp7iBnN2_TTUrX1QZx929Hx0VhcD0rZZ7RyGQlsQlz2zWU4WC1mCItKZm7pK6UnS-uI8EGYlakI4t6OTFe9q4WepEAPdgQVkPqjk2x01jcgjM2lKhBonflNShw8NyyDA7SxMH1EG1AANAPBizEwx97k3TIb5POF_atk0l7_bkBV7CuaYfLroE8fBkYQWjCV83Qp4zNF8xe"/>
+</div>
+</div>
+</footer>
+<!-- Yellow Floating Cart Button -->
+<a class="fixed bottom-8 right-8 w-16 h-16 bg-[#D7A86E] text-[#3E2723] rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all z-50 cursor-pointer" href="#" tabindex="0">
+<span class="material-symbols-outlined text-3xl" data-icon="shopping_basket">shopping_basket</span>
+<span class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">2</span>
+</a>
+<a class="fixed bottom-8 left-8 bg-[#25D366] text-white px-5 py-3 rounded-full flex items-center gap-2 shadow-2xl hover:scale-105 active:scale-95 transition-all z-50 cursor-pointer" href="https://wa.me/6285707506396" tabindex="0" target="_blank">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+</svg>
+<span class="font-bold">Pesan via WhatsApp</span>
+</a></body></html>
